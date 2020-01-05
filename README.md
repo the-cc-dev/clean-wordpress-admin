@@ -1,6 +1,17 @@
 # Clean WordPress Admin
 A collection of functions to clean up WordPress front and back-end to make it easier for editors to work and for you to look at the source code. Hiding content is also a good thing to do to limit the possibilities for your clients to destroy your beautiful site :)
 
+**Tested with version: 5.2.3**
+
+## Using
+Don’t just include these files in your project. Look at the content, update the options and see what works for you! The code is not optimized for speed, it’s optimized for readability. Sometimes the impact on performance makes these functions not eligible.
+
+ You should probably keep some things visible to you or a super admin. Check the user role like this:
+```php
+if ( ! current_user_can( 'administrator' ) ) {
+  // Clean it up!
+}
+```
 
 ## Content
 
@@ -13,6 +24,9 @@ Hide 'Thank you' text and version number in the admin footer
 ### [Admin menu](admin-menu.php)
 Hide items and sub-items in the admin menu.
 
+### [Classic editor](classic-editor.php)
+Change settings and clean up the classic editor (the one before Gutenberg).
+
 ### [Comments](comments.php)
 Remove default fields in the comment form.
 
@@ -21,6 +35,9 @@ Remove all or specific contextual tabs with help and information about how to us
 
 ### [Dashboard](dashboard.php)
 Remove dashboard meta boxes or even the whole dashboard itself.
+
+### [Editor](editor.php)
+Change editors settings or disable it completly.
 
 ### [Emojis](emojis.php)
 Disable built-in emojis that loads large JavaScript, CSS and image files :-1:
@@ -55,8 +72,14 @@ Remove default roles. Remove capabilities to specific roles or users.
 ### [Search](search.php)
 Disable search query and search form.
 
+### [Taxonomies](taxonomies.php)
+Remove default taxonomies.
+
 ### [Theme](theme.php)
 Remove theme features.
+
+### [TinyMCE editor](tinymce-editor.php)
+Change settings in the old TinyMCE WYSIWYG editor.
 
 ### [Updates](updates.php)
 Disable updates and remove notifications.
@@ -64,29 +87,12 @@ Disable updates and remove notifications.
 ### [Widgets](widgets.php)
 Remove default widgets.
 
-### [WYSIWYG](wysiwyg.php)
-Change settings and clean up the TinyMCE WYSIWYG.
-
-
 ## Plugins
 Functions to clean up common plugins.
 
 ### [Advanced Custom Fields](plugins/acf.php)
 
 ### [Yoast SEO](plugins/yoast-seo.php)
-
-
-## Using
-Don’t just include these files in your project. Look at the content, update the options and see what works for you!
-The code is not optimized for speed, it’s optimized for readability.
-
- You should probably keep some things visible to you or a super admin. Check the user role like this:
-```php
-if ( ! current_user_can( 'administrator' ) ) {
-  // Clean it up!
-}
-```
-
 
 ## Contribution
 Feel free to [suggest anything](https://github.com/vincentorback/clean-wordpress-admin/issues) you see missing or want to be fixed!
